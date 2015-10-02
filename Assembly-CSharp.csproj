@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{E14AC8BD-6904-B62C-D70E-9A32E8D1EDAE}</ProjectGuid>
+	<ProjectGuid>{B86D3992-A381-4E1E-9636-363163325441}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\CharacterSwap\CharacterSwap.cs" />
      <Compile Include="Assets\Scripts\CharacterSwap\SinglePlayerControll.cs" />
      <Compile Include="Assets\Scripts\CreatureBasics\Movement.cs" />
+     <Compile Include="Assets\Scripts\SpecialAbilities\Bullet.cs" />
      <Compile Include="Assets\Scripts\SpecialAbilities\ISpecial.cs" />
      <Compile Include="Assets\Scripts\SpecialAbilities\Shoot.cs" />
      <Compile Include="Assets\Scripts\SpecialAbilities\Slash.cs" />
