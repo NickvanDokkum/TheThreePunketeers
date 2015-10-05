@@ -45,14 +45,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CharacterSwap\CharacterSwap.cs" />
-     <Compile Include="Assets\Scripts\CharacterSwap\SinglePlayerControll.cs" />
      <Compile Include="Assets\Scripts\CreatureBasics\Movement.cs" />
-     <Compile Include="Assets\Scripts\SpecialAbilities\Bullet.cs" />
-     <Compile Include="Assets\Scripts\SpecialAbilities\ISpecial.cs" />
-     <Compile Include="Assets\Scripts\SpecialAbilities\Shoot.cs" />
-     <Compile Include="Assets\Scripts\SpecialAbilities\Slash.cs" />
-     <Compile Include="Assets\Scripts\SpecialAbilities\Tinker.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Door.cs" />
+     <Compile Include="Assets\Scripts\Interactables\IInteractable.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Panel.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Platform.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Target.cs" />
+     <Compile Include="Assets\Scripts\Player\Attack\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Player\Attack\IAttack.cs" />
+     <Compile Include="Assets\Scripts\Player\Attack\Knockback.cs" />
+     <Compile Include="Assets\Scripts\Player\Attack\Shoot.cs" />
+     <Compile Include="Assets\Scripts\Player\Attack\Slash.cs" />
+     <Compile Include="Assets\Scripts\Player\CharacterSwap\CharacterSwap.cs" />
+     <Compile Include="Assets\Scripts\Player\CharacterSwap\SinglePlayerControll.cs" />
+     <Compile Include="Assets\Scripts\Player\SpecialAbilities\ISpecial.cs" />
+     <Compile Include="Assets\Scripts\Player\SpecialAbilities\Placeholder.cs" />
+     <Compile Include="Assets\Scripts\Player\SpecialAbilities\Tinker.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

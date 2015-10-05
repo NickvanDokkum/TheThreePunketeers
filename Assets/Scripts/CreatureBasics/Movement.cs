@@ -7,8 +7,9 @@ public class Movement : MonoBehaviour {
     public double movementSpeed;
     Rigidbody2D theRigidbody;
     public double jumpForce;
-    int groundsTouching = 0;
+    bool isJumping = false;
     public bool right;
+    bool freeze = false;
 
     void Awake() {
         theRigidbody = GetComponent<Rigidbody2D>();
@@ -24,21 +25,32 @@ public class Movement : MonoBehaviour {
         }
 	}
 	void FixedUpdate () {
-        transform.Translate(new Vector2(currentMovement * (float)movementSpeed, 0));
+        if (!freeze) {
+            transform.Translate(new Vector2(currentMovement * (float)movementSpeed, 0));
+        }
 	}
     public void Jump() {
-        if (groundsTouching > 0) {
+        if (!isJumping && !freeze) {
             theRigidbody.AddForce(new Vector2(0, (float)jumpForce * 100));
+            isJumping = true;
         }
     }
-    void OnCollisionEnter2D(Collision2D other) {
+    void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.tag == "Ground") {
-            groundsTouching++;
+            isJumping = false;
         }
     }
-    void OnCollisionExit2D(Collision2D other) {
+    void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag == "Ground") {
-            groundsTouching--;
+            isJumping = true;
         }
+    }
+    public void Freeze(float time) {
+        freeze = true;
+        CancelInvoke("Move");
+        Invoke("Move", time);
+    }
+    void Move() {
+        freeze = false;
     }
 }
