@@ -50,7 +50,9 @@
      <Compile Include="Assets\Scripts\Interactables\IInteractable.cs" />
      <Compile Include="Assets\Scripts\Interactables\Panel.cs" />
      <Compile Include="Assets\Scripts\Interactables\Platform.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Rize.cs" />
      <Compile Include="Assets\Scripts\Interactables\Target.cs" />
+     <Compile Include="Assets\Scripts\Misc\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\Bullet.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\IAttack.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\Knockback.cs" />

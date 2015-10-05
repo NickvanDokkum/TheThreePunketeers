@@ -7,7 +7,7 @@ public class Target : MonoBehaviour {
     public GameObject interactableObject;
 
     void Awake() {
-        //interactable = interactableObject.GetComponent<IInteractable>();
+        interactable = interactableObject.GetComponent<IInteractable>();
         interactableObject = null;
     }
 
