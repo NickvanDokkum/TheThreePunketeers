@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour {
     public float maxPosLeft;
     public float maxPosRight;
 
-    void FixedUpdate() {
+    void LateUpdate() {
         transform.position = new Vector3(player.position.x, transform.position.y, -10);
         if (transform.position.x < maxPosLeft) {
             transform.position = new Vector3(maxPosLeft, transform.position.y, -10);

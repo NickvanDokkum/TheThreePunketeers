@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Interactables\Rize.cs" />
      <Compile Include="Assets\Scripts\Interactables\Target.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Misc\NextLevel.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\Bullet.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\IAttack.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\Knockback.cs" />
@@ -60,8 +61,11 @@
      <Compile Include="Assets\Scripts\Player\Attack\Slash.cs" />
      <Compile Include="Assets\Scripts\Player\CharacterSwap\CharacterSwap.cs" />
      <Compile Include="Assets\Scripts\Player\CharacterSwap\SinglePlayerControll.cs" />
+     <Compile Include="Assets\Scripts\Player\CharacterSwap\Stats.cs" />
      <Compile Include="Assets\Scripts\Player\SpecialAbilities\ISpecial.cs" />
      <Compile Include="Assets\Scripts\Player\SpecialAbilities\Placeholder.cs" />
+     <Compile Include="Assets\Scripts\Player\SpecialAbilities\Rope.cs" />
+     <Compile Include="Assets\Scripts\Player\SpecialAbilities\RopeSwing.cs" />
      <Compile Include="Assets\Scripts\Player\SpecialAbilities\Tinker.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -18,7 +18,7 @@ public class Platform : MonoBehaviour, IInteractable {
             else if (Input.GetAxis("Jump") < 0) {
                 gameObject.transform.Translate(new Vector2(0, -1 * speed));
             }
-            if (Input.GetButtonDown("Movement")) {
+            if (Input.GetButtonDown("Movement") || Input.GetButtonDown("Swap")) {
                 GameObject.Find("Nickolas").transform.parent.GetComponent<Movement>().Freeze(0);
                 controlled = false;
             }

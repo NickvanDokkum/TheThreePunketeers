@@ -53,4 +53,8 @@ public class Movement : MonoBehaviour {
     void Move() {
         freeze = false;
     }
+    public void ChangeStats(float jumpStrength, float moveSpeed) {
+        jumpForce = jumpStrength;
+        movementSpeed = moveSpeed;
+    }
 }
