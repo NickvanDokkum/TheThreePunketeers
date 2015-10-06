@@ -8,12 +8,14 @@ public class RopeSwing : MonoBehaviour, ISpecial {
     Movement movement;
     Vector2 difference;
     Vector2 move;
+    CharacterSwap characterSwap;
     int times;
     int counter = 0;
 
     void Awake() {
         movement = GetComponentInParent<Movement>();
         rigidbodyparent = GetComponentInParent<Rigidbody2D>();
+        characterSwap = GetComponentInParent<CharacterSwap>();
     }
     public void StartSpecial() {
         if (swingable != null && gameObject.activeInHierarchy) {
@@ -25,13 +27,14 @@ public class RopeSwing : MonoBehaviour, ISpecial {
             rigidbodyparent.constraints = RigidbodyConstraints2D.FreezeAll;
             InvokeRepeating("MoveFurther", 0.05f, 0.05f);
             movement.Freeze(0.05f * times);
+            characterSwap.Freeze(999999);
         }
     }
     void MoveFurther() {
         transform.parent.Translate(move);
         counter++;
         if (counter >= times) {
-            
+            characterSwap.Freeze(0);
             rigidbodyparent.constraints = RigidbodyConstraints2D.None;
             rigidbodyparent.constraints = RigidbodyConstraints2D.FreezeRotation;
             CancelInvoke("MoveFurther");
