@@ -11,8 +11,7 @@ public class Target : MonoBehaviour {
         interactableObject = null;
     }
 
-    public void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("hit");
+    public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "PlayerAttack") {
             interactable.StartThing();
             Destroy(this.gameObject);

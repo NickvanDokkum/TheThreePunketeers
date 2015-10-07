@@ -4,7 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
     public bool right;
-    float speed = 1;
+    public float speed = 1;
     Vector2 vector;
 
     void Start() {

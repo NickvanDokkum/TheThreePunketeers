@@ -3,7 +3,6 @@ using System.Collections;
 
 public class AIWalk : MonoBehaviour {
 
-    bool walkRight = false;
     Movement movement;
     bool ready = true;
 
@@ -12,25 +11,22 @@ public class AIWalk : MonoBehaviour {
     }
     void Start() {
         if (Random.Range(0, 2) == 0) {
-            walkRight = true;
-        }
-        ChangeMovement();
-    }
-    void OnTriggerEnter2D(Collider2D other) {
-        if (ready && other.gameObject.tag == "Edge") {
-            ChangeMovement();
-            ready = false;
-            Invoke("Cooldown", 0.2f);
-        }
-    }
-    void ChangeMovement() {
-        if (!walkRight) {
-            walkRight = true;
-            movement.ChangeMovement(1);
+            movement.ChangeMovement(-1);
         }
         else {
-            walkRight = false;
-            movement.ChangeMovement(-1);
+            movement.ChangeMovement(1);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other) {
+        if (ready) {
+            if (other.gameObject.tag == "EdgeLeft") {
+                movement.ChangeMovement(1);
+            }
+            else if (other.gameObject.tag == "EdgeRight") {
+                movement.ChangeMovement(-1);
+            }
+            ready = false;
+            Invoke("Cooldown", 0.2f);
         }
     }
     void Cooldown() {

@@ -8,12 +8,14 @@ public class CameraMovement : MonoBehaviour {
     public float maxPosRight;
 
     void LateUpdate() {
-        transform.position = new Vector3(player.position.x, transform.position.y, -10);
-        if (transform.position.x < maxPosLeft) {
-            transform.position = new Vector3(maxPosLeft, transform.position.y, -10);
-        }
-        else if (transform.position.x > maxPosRight) {
-            transform.position = new Vector3(maxPosRight, transform.position.y, -10);
+        if (player != null) {
+            transform.position = new Vector3(player.position.x, transform.position.y, -10);
+            if (transform.position.x < maxPosLeft) {
+                transform.position = new Vector3(maxPosLeft, transform.position.y, -10);
+            }
+            else if (transform.position.x > maxPosRight) {
+                transform.position = new Vector3(maxPosRight, transform.position.y, -10);
+            }
         }
     }
 }
