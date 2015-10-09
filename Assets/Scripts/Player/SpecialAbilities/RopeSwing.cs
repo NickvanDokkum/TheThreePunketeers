@@ -23,7 +23,6 @@ public class RopeSwing : MonoBehaviour, ISpecial {
             difference = swingable.GetComponent<Rope>().difference();
             move = difference.normalized;
             times = Mathf.CeilToInt(difference.x / move.x);
-            Debug.Log(difference + " " + move + " " + times);
             rigidbodyparent.constraints = RigidbodyConstraints2D.FreezeAll;
             InvokeRepeating("MoveFurther", 0.05f, 0.05f);
             movement.Freeze(0.05f * times);

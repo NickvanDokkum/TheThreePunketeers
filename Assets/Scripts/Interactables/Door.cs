@@ -14,7 +14,7 @@ public class Door : MonoBehaviour, IInteractable {
 
     public void StartThing() {
         InvokeRepeating("NextFrame", 0, openSpeed);
-        GameObject.Find("Nickolas").transform.parent.GetComponent<Movement>().Freeze(openSpeed * (sprites.Length - 1));
+        GameObject.Find("Players").GetComponent<Movement>().Freeze(openSpeed * (sprites.Length - 1));
     }
     void NextFrame() {
         spriteRenderer.sprite = sprites[currFrame];

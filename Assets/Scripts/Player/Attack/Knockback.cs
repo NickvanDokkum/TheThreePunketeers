@@ -15,7 +15,6 @@ public class Knockback : MonoBehaviour, IAttack {
 
     public void StartAttack() {
         if (canAttack && gameObject.activeInHierarchy) {
-            Debug.Log("Attack");
             canAttack = false;
             Invoke("ResetCooldown", (float)cooldown);
             if (movement.right) {

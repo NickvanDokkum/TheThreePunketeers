@@ -16,7 +16,6 @@ public class Shoot : MonoBehaviour, IAttack {
 
     public void StartAttack() {
         if (canShoot && gameObject.activeInHierarchy) {
-            Debug.Log("BANG");
             canShoot = false;
             Invoke("ResetCooldown", (float)cooldown);
             bullet.GetComponent<Bullet>().right = movement.right;

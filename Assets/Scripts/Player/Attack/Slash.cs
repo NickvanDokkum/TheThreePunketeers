@@ -15,7 +15,6 @@ public class Slash : MonoBehaviour, IAttack {
 
     public void StartAttack() {
         if (canSlash && gameObject.activeInHierarchy) {
-            Debug.Log("Slash");
             canSlash = false;
             Invoke("ResetCooldown", (float)cooldown);
             if (movement.right) {

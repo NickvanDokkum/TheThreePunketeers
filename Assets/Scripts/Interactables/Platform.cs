@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour, IInteractable {
 
     public void StartThing() {
         controlled = true;
-        GameObject.Find("Nickolas").transform.parent.GetComponent<Movement>().Freeze(9999999);
+        GameObject.Find("Players").GetComponent<Movement>().Freeze(9999999);
     }
     void Update() {
         if (controlled) {
@@ -19,7 +19,7 @@ public class Platform : MonoBehaviour, IInteractable {
                 gameObject.transform.Translate(new Vector2(0, -1 * speed));
             }
             if (Input.GetButtonDown("Movement") || Input.GetButtonDown("Swap")) {
-                GameObject.Find("Nickolas").transform.parent.GetComponent<Movement>().Freeze(0);
+                GameObject.Find("Players").GetComponent<Movement>().Freeze(0);
                 controlled = false;
             }
         }

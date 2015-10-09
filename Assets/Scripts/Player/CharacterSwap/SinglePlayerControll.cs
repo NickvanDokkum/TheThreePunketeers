@@ -28,13 +28,11 @@ public class SinglePlayerControll : MonoBehaviour {
             movementScript.Jump();
         }
         if (Input.GetButtonDown("Attack")) {
-            Debug.Log("Attack");
             for (int i = 0; i < attack.Length; i++) {
                 attack[i].StartAttack();
             }
         }
         if (Input.GetButtonDown("Special")) {
-            Debug.Log("Special");
             for (int i = 0; i < attack.Length; i++) {
                 special[i].StartSpecial();
             }

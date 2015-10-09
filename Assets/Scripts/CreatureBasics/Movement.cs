@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour {
     Rigidbody2D theRigidbody;
     public double jumpForce;
     bool isJumping = false;
+    bool jumpCooldown = false;
     public bool right;
     bool freeze = false;
 
@@ -33,10 +34,15 @@ public class Movement : MonoBehaviour {
         if (!isJumping && !freeze) {
             theRigidbody.AddForce(new Vector2(0, (float)jumpForce * 100));
             isJumping = true;
+            jumpCooldown = true;
+            Invoke("JumpCooldownReset", 0.5f);
         }
     }
+    void JumpCooldownReset() {
+        jumpCooldown = false;
+    }
     void OnTriggerStay2D(Collider2D other) {
-        if (other.gameObject.tag == "Ground") {
+        if (other.gameObject.tag == "Ground" && !jumpCooldown) {
             isJumping = false;
         }
     }

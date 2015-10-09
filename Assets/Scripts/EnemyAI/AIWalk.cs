@@ -17,7 +17,7 @@ public class AIWalk : MonoBehaviour {
             movement.ChangeMovement(1);
         }
     }
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other) {
         if (ready) {
             if (other.gameObject.tag == "EdgeLeft") {
                 movement.ChangeMovement(1);
