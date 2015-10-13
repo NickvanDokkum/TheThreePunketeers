@@ -38,30 +38,20 @@ public class Health : MonoBehaviour {
             characterSwap.DisableCharacter(gameObject.name, 30);
         }
     }
-    void OnCollisionEnter2D(Collision2D other) {
-        //Debug.Log(other.gameObject.tag + " " + gameObject.tag);
-        if (other.gameObject.tag == "Enemy" && gameObject.tag == "Player") {
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "PlayerAttack" && gameObject.tag == "Enemy") {
             Damage(1);
         }
-        if (other.gameObject.tag == "PlayerAttack" && gameObject.tag == "Enemy") {
+        if (other.gameObject.tag == "Enemy" && gameObject.tag == "Player") {
             Damage(1);
         }
         if (other.gameObject.tag == "InstaDeath") {
-            if (tag == "Player") {
+            if (gameObject.tag == "Player") {
                 Application.LoadLevel(Application.loadedLevel);
             }
             else {
-                Death();
+                Damage(999999);
             }
-        }
-    }
-    void OnTriggerEnter2D(Collider2D other) {
-        //Debug.Log(other.gameObject.tag + " " + gameObject.tag);
-        if (other.gameObject.tag == "PlayerAttack" && gameObject.tag == "Enemy") {
-            Damage(1);
-        }
-        if (other.gameObject.tag == "Enemy" && gameObject.tag == "Player") {
-            Damage(1);
         }
     }
 }

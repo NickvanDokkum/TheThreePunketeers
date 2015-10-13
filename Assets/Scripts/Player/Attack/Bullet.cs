@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 
     public bool right;
     public float speed = 1;
+    public float timeDecay = 2;
     Vector2 vector;
 
     void Start() {
@@ -14,7 +15,7 @@ public class Bullet : MonoBehaviour {
         else {
             vector = new Vector2(-1 * speed, 0);
         }
-        Invoke("Destruction", 2);
+        Invoke("Destruction", timeDecay);
     }
     void Update() {
         transform.Translate(vector);

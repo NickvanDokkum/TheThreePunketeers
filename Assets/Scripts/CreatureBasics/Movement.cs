@@ -11,9 +11,17 @@ public class Movement : MonoBehaviour {
     bool jumpCooldown = false;
     public bool right;
     bool freeze = false;
+    public PlayAnimation[] animationScripts;
+    CharacterSwap characterSwap;
+    Idle[] idle;
 
     void Awake() {
+        characterSwap = GetComponent<CharacterSwap>();
         theRigidbody = GetComponent<Rigidbody2D>();
+        if (tag == "Player") {
+            animationScripts = GetComponentsInChildren<PlayAnimation>();
+            idle = GetComponentsInChildren<Idle>();
+        }
     }
 
 	public void ChangeMovement(float movement) {
@@ -22,12 +30,54 @@ public class Movement : MonoBehaviour {
             right = true;
         }
         else if(movement < 0){
+            
             right = false;
         }
 	}
 	void FixedUpdate () {
         if (!freeze) {
             transform.Translate(new Vector2(currentMovement * (float)movementSpeed, 0));
+            if (currentMovement * (float)movementSpeed < 0) {
+                if (tag == "Player") {
+                    if (!isJumping) {
+                        if (!animationScripts[characterSwap.selectedCharacter * 4 + 1].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 4 + 1].StartAnimation();
+                        }
+                    }
+                    else {
+                        if (!animationScripts[characterSwap.selectedCharacter * 4 + 3].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 4 + 3].StartAnimation();
+                        }
+                    }
+                }
+                else {
+                    if (!animationScripts[1].IsPlaying()) {
+                        animationScripts[1].StartAnimation();
+                    }
+                }
+            }
+            else if (currentMovement * (float)movementSpeed > 0) {
+                if (tag == "Player") {
+                    if (!isJumping) {
+                        if (!animationScripts[characterSwap.selectedCharacter * 4].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 4].StartAnimation();
+                        }
+                    }
+                    else {
+                        if (!animationScripts[characterSwap.selectedCharacter * 4 + 2].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 4 + 2].StartAnimation();
+                        }
+                    }
+                }
+                else {
+                    if (!animationScripts[0].IsPlaying()) {
+                        animationScripts[0].StartAnimation();
+                    }
+                }
+            }
+            else {
+                idle[characterSwap.selectedCharacter].ChangeIdle();
+            }
         }
 	}
     public void Jump() {

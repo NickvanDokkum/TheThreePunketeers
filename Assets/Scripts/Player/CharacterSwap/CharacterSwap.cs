@@ -4,12 +4,12 @@ using System.Collections;
 public class CharacterSwap : MonoBehaviour {
 
     public GameObject[] playerCharacters;
-    int selectedCharacter;
+    public GameObject swapAnimation;
+    public int selectedCharacter;
     bool freeze = false;
     bool disableZero = false;
     bool disableOne = false;
     bool disableTwo = false;
-    int antiLoop = 0;
 
     void Start() {
         selectedCharacter = Random.Range(0, 3);
@@ -36,7 +36,7 @@ public class CharacterSwap : MonoBehaviour {
                 }
             }
             if(continueing) {
-                antiLoop = 0;
+                Instantiate(swapAnimation, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), transform.rotation);
                 for (int i = 0; i < playerCharacters.Length; i++) {
                     if (i != selectedCharacter) {
                         playerCharacters[i].SetActive(false);
@@ -47,16 +47,15 @@ public class CharacterSwap : MonoBehaviour {
                 }
             }
             else {
-                antiLoop++;
-                if (antiLoop >= 3) {
-                    Application.LoadLevel(Application.loadedLevel);
-                }
                 NextCharacter();
             }
         }
     }
     public void NextCharacter() {
         if (!freeze) {
+            if (disableZero && disableOne && disableTwo) {
+                Application.LoadLevel(Application.loadedLevel);
+            }
             if (selectedCharacter < playerCharacters.Length - 1) {
                 selectedCharacter++;
             }
@@ -90,7 +89,9 @@ public class CharacterSwap : MonoBehaviour {
         if (disableZero && disableOne && disableTwo) {
             Application.LoadLevel(Application.loadedLevel);
         }
-        NextCharacter();
+        else {
+            NextCharacter();
+        }
     }
     void ResetZero() {
         disableZero = false;
