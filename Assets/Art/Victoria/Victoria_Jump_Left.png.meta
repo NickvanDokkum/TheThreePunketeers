@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fcd465788193e3e478f1b20d6939dc27
-timeCreated: 1444642110
+timeCreated: 1444818915
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,7 +60,7 @@ TextureImporter:
         width: 16
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Victoria_Jump_Left_1
       rect:
@@ -69,8 +69,8 @@ TextureImporter:
         y: 3
         width: 16
         height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .449999988}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

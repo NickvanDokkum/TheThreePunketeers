@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 52c79e1ecc96cc74d8fb658e2b643790
-timeCreated: 1444642452
+timeCreated: 1444818976
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,8 +59,8 @@ TextureImporter:
         y: 2
         width: 23
         height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .469999999}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nickolas_Jump_Right_1
       rect:
@@ -70,7 +70,7 @@ TextureImporter:
         width: 23
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

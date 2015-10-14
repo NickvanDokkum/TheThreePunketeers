@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0211ad494f0cdd3479f898dd083da35d
-timeCreated: 1444641770
+timeCreated: 1444819041
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,8 +59,8 @@ TextureImporter:
         y: 1
         width: 15
         height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .49000001}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Wilson_Jump_Right_1
       rect:
@@ -70,7 +70,7 @@ TextureImporter:
         width: 15
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
