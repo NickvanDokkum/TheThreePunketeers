@@ -43,8 +43,5 @@ public class PlayAnimation : MonoBehaviour {
         if (!playOnce) {
             spriteRenderer.sprite = sprites[currentFrame];
         }
-        else {
-            Destroy(this);
-        }
     }
 }

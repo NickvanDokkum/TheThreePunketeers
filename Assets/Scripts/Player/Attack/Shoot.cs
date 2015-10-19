@@ -9,9 +9,11 @@ public class Shoot : MonoBehaviour, IAttack {
     public Transform spawnpointRight;
     public Transform spawnpointLeft;
     Movement movement;
+    PlayAnimation[] animations;
 
-    void Start() {
+    void Awake() {
         movement = GetComponentInParent<Movement>();
+        animations = GetComponents<PlayAnimation>();
     }
 
     public void StartAttack() {
@@ -21,9 +23,11 @@ public class Shoot : MonoBehaviour, IAttack {
             bullet.GetComponent<Bullet>().right = movement.right;
             if (movement.right) {
                 Instantiate(bullet, spawnpointRight.position, spawnpointRight.rotation);
+                animations[animations.Length - 3].StartAnimation();
             }
             else {
                 Instantiate(bullet, spawnpointLeft.position, spawnpointLeft.rotation);
+                animations[animations.Length - 2].StartAnimation();
             }
         }
     }

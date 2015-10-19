@@ -40,13 +40,13 @@ public class Movement : MonoBehaviour {
             if (currentMovement * (float)movementSpeed < 0) {
                 if (tag == "Player") {
                     if (!isJumping) {
-                        if (!animationScripts[characterSwap.selectedCharacter * 4 + 1].IsPlaying()) {
-                            animationScripts[characterSwap.selectedCharacter * 4 + 1].StartAnimation();
+                        if (!animationScripts[characterSwap.selectedCharacter * 7 + 1].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 7 + 1].StartAnimation();
                         }
                     }
                     else {
-                        if (!animationScripts[characterSwap.selectedCharacter * 4 + 3].IsPlaying()) {
-                            animationScripts[characterSwap.selectedCharacter * 4 + 3].StartAnimation();
+                        if (!animationScripts[characterSwap.selectedCharacter * 7 + 3].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 7 + 3].StartAnimation();
                         }
                     }
                 }
@@ -59,13 +59,13 @@ public class Movement : MonoBehaviour {
             else if (currentMovement * (float)movementSpeed > 0) {
                 if (tag == "Player") {
                     if (!isJumping) {
-                        if (!animationScripts[characterSwap.selectedCharacter * 4].IsPlaying()) {
-                            animationScripts[characterSwap.selectedCharacter * 4].StartAnimation();
+                        if (!animationScripts[characterSwap.selectedCharacter * 7].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 7].StartAnimation();
                         }
                     }
                     else {
-                        if (!animationScripts[characterSwap.selectedCharacter * 4 + 2].IsPlaying()) {
-                            animationScripts[characterSwap.selectedCharacter * 4 + 2].StartAnimation();
+                        if (!animationScripts[characterSwap.selectedCharacter * 7 + 2].IsPlaying()) {
+                            animationScripts[characterSwap.selectedCharacter * 7 + 2].StartAnimation();
                         }
                     }
                 }

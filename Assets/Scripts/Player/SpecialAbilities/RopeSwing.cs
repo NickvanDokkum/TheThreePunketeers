@@ -11,11 +11,13 @@ public class RopeSwing : MonoBehaviour, ISpecial {
     CharacterSwap characterSwap;
     int times;
     int counter = 0;
+    PlayAnimation[] animations;
 
     void Awake() {
         movement = GetComponentInParent<Movement>();
         rigidbodyparent = GetComponentInParent<Rigidbody2D>();
         characterSwap = GetComponentInParent<CharacterSwap>();
+        animations = GetComponents<PlayAnimation>();
     }
     public void StartSpecial() {
         if (swingable != null && gameObject.activeInHierarchy) {
@@ -27,6 +29,7 @@ public class RopeSwing : MonoBehaviour, ISpecial {
             InvokeRepeating("MoveFurther", 0.05f, 0.05f);
             movement.Freeze(0.05f * times);
             characterSwap.Freeze(999999);
+            animations[animations.Length - 1].StartAnimation();
         }
     }
     void MoveFurther() {
