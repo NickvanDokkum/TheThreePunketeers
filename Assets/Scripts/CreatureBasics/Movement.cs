@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour {
     public PlayAnimation[] animationScripts;
     CharacterSwap characterSwap;
     Idle[] idle;
+    bool isIdle = false;
 
     void Awake() {
         characterSwap = GetComponent<CharacterSwap>();
@@ -25,6 +26,7 @@ public class Movement : MonoBehaviour {
     }
 
 	public void ChangeMovement(float movement) {
+        isIdle = false;
         currentMovement = movement;
         if (movement > 0) {
             right = true;
@@ -76,7 +78,10 @@ public class Movement : MonoBehaviour {
                 }
             }
             else {
-                idle[characterSwap.selectedCharacter].ChangeIdle();
+                if (!isIdle) {
+                    idle[characterSwap.selectedCharacter].ChangeIdle();
+                    isIdle = true;
+                }
             }
         }
 	}

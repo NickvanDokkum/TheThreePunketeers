@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 2f0a91e21401c0a4fb33121e34eef892
-timeCreated: 1445266660
+guid: a591ca607a205c64f94b23bb74407a9d
+timeCreated: 1445265931
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Control_Platform_0
-    21300002: Control_Platform_1
+    21300000: Victoria_Slash_Left_0
+    21300002: Victoria_Slash_Left_1
+    21300004: Victoria_Slash_Left_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -46,31 +47,41 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 20
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Control_Platform_0
+    - name: Victoria_Slash_Left_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 52
-        height: 28
+        width: 34
+        height: 37
       alignment: 9
-      pivot: {x: .5, y: .5}
+      pivot: {x: .782523155, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Control_Platform_1
+    - name: Victoria_Slash_Left_1
       rect:
         serializedVersion: 2
-        x: 53
+        x: 36
         y: 0
-        width: 52
-        height: 28
+        width: 34
+        height: 37
       alignment: 9
-      pivot: {x: .5, y: .550000012}
+      pivot: {x: .782523215, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Victoria_Slash_Left_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 34
+        height: 37
+      alignment: 9
+      pivot: {x: .782523215, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
