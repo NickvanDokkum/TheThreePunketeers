@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Interactables\Target.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Misc\NextLevel.cs" />
+     <Compile Include="Assets\Scripts\Misc\Piston.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\Bullet.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\IAttack.cs" />
      <Compile Include="Assets\Scripts\Player\Attack\Knockback.cs" />

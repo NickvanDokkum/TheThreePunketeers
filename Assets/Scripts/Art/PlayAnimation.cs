@@ -10,7 +10,6 @@ public class PlayAnimation : MonoBehaviour {
     public float playSpeed;
     public int currentFrame = 0;
     SpriteRenderer spriteRenderer;
-    public string UnityEditorReminder;
 
     void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
