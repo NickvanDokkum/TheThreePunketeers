@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour {
         Invoke("Destruction", timeDecay);
     }
     void Update() {
-        transform.Translate(vector);
+        transform.Translate(vector * Time.deltaTime * 60);
     }
     void OnCollisionEnter2D(Collision2D other) {
         Destruction();
