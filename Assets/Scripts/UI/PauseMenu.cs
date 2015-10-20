@@ -27,6 +27,10 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
+    public void Restart() {
+        Time.timeScale = 1;
+        Application.LoadLevel(Application.loadedLevel);
+    }
     public void BackToMenu() {
         Time.timeScale = 1;
         Application.LoadLevel(0);
