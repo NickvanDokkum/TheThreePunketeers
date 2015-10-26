@@ -4,7 +4,7 @@ using System.Collections;
 public class Piston : MonoBehaviour {
 
     public GameObject[] colliders;
-	public int time = 0;
+	public int time;
 	AudioSource audioSource;
     
 	void Start() {
@@ -33,7 +33,7 @@ public class Piston : MonoBehaviour {
         else if(time == 7){
             ChangeCollider(0);
         }
-        else if (time == 11) {
+        else if (time >= 11) {
             time = 0;
         }
     }
