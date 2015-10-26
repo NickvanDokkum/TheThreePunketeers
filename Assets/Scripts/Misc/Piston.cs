@@ -4,9 +4,11 @@ using System.Collections;
 public class Piston : MonoBehaviour {
 
     public GameObject[] colliders;
-    public int time = 0;
+	public int time = 0;
+	AudioSource audioSource;
     
-    void Start() {
+	void Start() {
+		audioSource = GetComponent<AudioSource> ();
         InvokeRepeating("CheckTime", 0, 0.5f);
     }
     void ChangeCollider(int collider) {
@@ -23,6 +25,7 @@ public class Piston : MonoBehaviour {
         time++;
         if (time == 1 || time == 6) {
             ChangeCollider(1);
+			audioSource.Play();
         }
         else if (time == 2) {
             ChangeCollider(2);

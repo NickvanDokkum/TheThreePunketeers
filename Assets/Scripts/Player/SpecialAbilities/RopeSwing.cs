@@ -11,10 +11,12 @@ public class RopeSwing : MonoBehaviour, ISpecial {
     CharacterSwap characterSwap;
     int times;
     int counter = 0;
-    PlayAnimation[] animations;
-
-    void Awake() {
-        movement = GetComponentInParent<Movement>();
+	PlayAnimation[] animations;
+	AudioSource[] audioSource;
+	
+	void Awake() {
+		audioSource = GetComponents<AudioSource> ();
+		movement = GetComponentInParent<Movement>();
         rigidbodyparent = GetComponentInParent<Rigidbody2D>();
         characterSwap = GetComponentInParent<CharacterSwap>();
         animations = GetComponents<PlayAnimation>();
@@ -33,6 +35,9 @@ public class RopeSwing : MonoBehaviour, ISpecial {
         }
     }
     void MoveFurther() {
+		if (!audioSource [1].isPlaying) {
+			audioSource[1].Play();
+		}
         transform.parent.Translate(move);
         counter++;
         if (counter >= times) {

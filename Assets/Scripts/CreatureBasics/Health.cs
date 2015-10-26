@@ -6,6 +6,7 @@ public class Health : MonoBehaviour {
     public int maxHealth;
     int curHealth;
     CharacterSwap characterSwap;
+	public GameObject enemyDeathSound;
 
     public int currentHealth() {
         return (curHealth);
@@ -32,7 +33,8 @@ public class Health : MonoBehaviour {
     }
     void Death() {
         if (tag != "Player") {
-            Destroy(this.gameObject);
+			Instantiate(enemyDeathSound, transform.position, transform.rotation);
+			Destroy(gameObject);
         }
         else {
             characterSwap.DisableCharacter(gameObject.name, 30);

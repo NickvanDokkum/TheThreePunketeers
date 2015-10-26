@@ -8,15 +8,18 @@ public class Slash : MonoBehaviour, IAttack {
     public BoxCollider2D colliderRight;
     public BoxCollider2D colliderLeft;
     Movement movement;
-    PlayAnimation[] animations;
+	PlayAnimation[] animations;
+	AudioSource[] audioSource;
 
     void Start() {
+		audioSource = GetComponents<AudioSource> ();
         movement = GetComponentInParent<Movement>();
         animations = GetComponents<PlayAnimation>();
     }
 
     public void StartAttack() {
         if (canSlash && gameObject.activeInHierarchy) {
+			audioSource[0].Play();
             canSlash = false;
             Invoke("ResetCooldown", (float)cooldown);
             if (movement.right) {
