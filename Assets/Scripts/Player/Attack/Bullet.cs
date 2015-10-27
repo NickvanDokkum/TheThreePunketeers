@@ -21,8 +21,15 @@ public class Bullet : MonoBehaviour {
         transform.Translate(vector * Time.deltaTime * 60);
     }
     void OnCollisionEnter2D(Collision2D other) {
-        Destruction();
+		if (other.gameObject.tag != "Hackable" && other.gameObject.tag != "PlayerAttack") {
+			Destruction ();
+		}
     }
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag != "Hackable" && other.gameObject.tag != "PlayerAttack") {
+			Destruction ();
+		}
+	}
     void Destruction() {
         Destroy(gameObject);
     }

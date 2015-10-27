@@ -12,11 +12,12 @@ public class Target : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "PlayerAttack") {
+		if (other.gameObject.tag == "RangedPlayerAttack") {
             interactable.StartThing();
 			GetComponent<AudioSource>().Play();
 			GetComponent<SpriteRenderer>().sprite = null;
 			Destroy(GetComponent<PlayAnimation>());
+			Destroy(GetComponent<BoxCollider2D>());
 			Invoke("DestroyObject", 2);
         }
     }

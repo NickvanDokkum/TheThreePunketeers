@@ -33,7 +33,9 @@ public class Health : MonoBehaviour {
     }
     void Death() {
         if (tag != "Player") {
-			Instantiate(enemyDeathSound, transform.position, transform.rotation);
+			if(enemyDeathSound != null){
+				Instantiate(enemyDeathSound, transform.position, transform.rotation);
+			}
 			Destroy(gameObject);
         }
         else {
@@ -41,7 +43,7 @@ public class Health : MonoBehaviour {
         }
     }
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "PlayerAttack" && gameObject.tag == "Enemy") {
+		if ((other.gameObject.tag == "PlayerAttack" || other.gameObject.tag == "RangedPlayerAttack") && gameObject.tag == "Enemy") {
             Damage(1);
         }
         if (other.gameObject.tag == "Enemy" && gameObject.tag == "Player") {
@@ -52,8 +54,13 @@ public class Health : MonoBehaviour {
                 Application.LoadLevel(Application.loadedLevel);
             }
             else {
-                Damage(999999);
+				Death();
             }
         }
     }
+	void OnCollisionEnter2D(Collision2D other){
+		if (other.gameObject.tag == "InstaDeath" && tag == "Enemy") {
+			Death();
+		}
+	}
 }

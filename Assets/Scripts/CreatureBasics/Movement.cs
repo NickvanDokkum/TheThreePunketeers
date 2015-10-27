@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour {
             theRigidbody.AddForce(new Vector2(0, (float)jumpForce * 100));
             isJumping = true;
             jumpCooldown = true;
-            Invoke("JumpCooldownReset", 0.5f);
+            Invoke("JumpCooldownReset", 0.9f);
         }
     }
     void JumpCooldownReset() {

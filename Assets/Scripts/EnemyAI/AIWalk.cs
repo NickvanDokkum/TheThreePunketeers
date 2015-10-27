@@ -4,7 +4,6 @@ using System.Collections;
 public class AIWalk : MonoBehaviour {
 
     Movement movement;
-    bool ready = true;
 
     void Awake() {
         movement = GetComponent<Movement>();
@@ -18,18 +17,19 @@ public class AIWalk : MonoBehaviour {
         }
     }
     void OnTriggerStay2D(Collider2D other) {
-        if (ready) {
-            if (other.gameObject.tag == "EdgeLeft") {
-                movement.ChangeMovement(1);
-            }
-            else if (other.gameObject.tag == "EdgeRight") {
-                movement.ChangeMovement(-1);
-            }
-            ready = false;
-            Invoke("Cooldown", 0.2f);
+        if (other.gameObject.tag == "EdgeLeft") {
+            movement.ChangeMovement(1);
+        }
+        else if (other.gameObject.tag == "EdgeRight") {
+            movement.ChangeMovement(-1);
         }
     }
-    void Cooldown() {
-        ready = true;
-    }
+	void OnColliderStay2D(Collider2D other) {
+		if (other.gameObject.tag == "EdgeLeft") {
+			movement.ChangeMovement(1);
+		}
+		else if (other.gameObject.tag == "EdgeRight") {
+			movement.ChangeMovement(-1);
+		}
+	}
 }
