@@ -23,7 +23,7 @@ public class RopeSwing : MonoBehaviour, ISpecial {
     }
     public void StartSpecial() {
         if (swingable != null && gameObject.activeInHierarchy) {
-            transform.parent.position = new Vector2(swingable.transform.position.x, swingable.transform.position.y);
+			transform.parent.position = new Vector3(swingable.transform.position.x, swingable.transform.position.y, transform.parent.position.z);
             difference = swingable.GetComponent<Rope>().difference();
             move = difference.normalized;
             times = Mathf.CeilToInt(difference.x / move.x);

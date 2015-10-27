@@ -28,7 +28,7 @@ public class Tinker : MonoBehaviour, ISpecial {
         }
     }
     void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.tag == "Hackable") {
+        if (other.gameObject.tag == "Hackable" && other.gameObject == hackable) {
             hackable = null;
         }
     }
